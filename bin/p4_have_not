@@ -1,0 +1,20 @@
+#!/bin/sh
+# File  : p4_have_not
+# Author: Thomas Gleerup
+# Date  : June 2001
+
+# Hiearchically find files, which are not checked into Perforce (p4)
+# 2>&1 merges STDERR into STDOUT (p4 reports to STDERR when "p4 have" is called with a file that does not exist
+# Also filters away ~-files  and #-files  
+
+find . -type f \
+  | perl -n -e '$|=1; if (!(m/.*?~$/) && !(m/^#.*?#$/)) {print "$_";}' \
+  | perl -e '@files=(); while ($file=<>) {chomp($file); push @files, "\"$file\""; if (length("p4 fstat @files")>255) { $file = pop(@files); system("p4 fstat @files"); @files=($file); } } if ($#files>=0) { system("p4 fstat @files");}' \
+  2>&1 \
+  | perl -n -e '$|=1; if (m/(.*?) - no such file\(s\)./) {print "$1\n";}' 
+
+# SLOW:
+#find . -type f -exec p4 have {} \; \
+#  2>&1 \
+#  | perl -n -e '$|=1; if (m/(.*?) - file\(s\) not on client/) {print "$1\n";}' \
+#  | perl -n -e '$|=1; if (!(m/.*?~$/) && !(m/^#.*?#$/)) {print "$_";}'
