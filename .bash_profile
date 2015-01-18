@@ -1,7 +1,7 @@
 export PATH=$PATH:.
 
 RED="\033[1;31m"
-GREEN="\033[1;32m"
+GREEN="\033[0;32m"
 BLUE="\033[0;34m"
 OFF="\033[0m"
 
