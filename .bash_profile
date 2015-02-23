@@ -31,3 +31,6 @@ alias grep='grep --colour'
 
 #git auto completion script is to be found at https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
 source ~/git-completion.bash
+
+# sourcing miscellaneous utilities
+source ~/GitHub/bash/utilities/math.source

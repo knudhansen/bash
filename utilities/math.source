@@ -1,0 +1,15 @@
+function dec2hex
+{
+    while read data;
+    do
+	echo "obase=16;$data" | bc;
+    done
+}
+
+function hex2dec
+{
+    while read data;
+    do
+	echo "ibase=16;$data" | bc;
+    done
+}
