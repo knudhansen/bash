@@ -34,3 +34,4 @@ source ~/git-completion.bash
 
 # sourcing miscellaneous utilities
 source ~/GitHub/bash/utilities/math.source
+source ~/GitHub/bash/utilities/misc.source
