@@ -1,0 +1,21 @@
+#!/bin/bash
+
+STRING="Hello World"
+
+echo $STRING
+echo $(date +%Y%m%d)
+
+VAR="global variable"
+function test_function {
+#Define test_function local variable
+#This variable is local to test_function function only
+local VAR="local variable"
+echo $VAR
+}
+echo $VAR
+test_function
+# Note the test_function global variable did not change
+# "local" is test_function reserved word
+echo $VAR
+echo ----------------
+echo $1 $2 $3

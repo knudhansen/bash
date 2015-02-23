@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo with colons
+cat data_colon | colorize
+echo
+echo with spaces
+cat data_space | colorize

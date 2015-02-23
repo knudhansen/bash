@@ -28,3 +28,6 @@ function exit_status_color_off {
 export PS1="\$(echo -e \$(exit_status_color)) \u${BLUE} @ \w${OFF} > "
 
 alias grep='grep --colour'
+
+#git auto completion script is to be found at https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+source ~/git-completion.bash

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#awk '{ test=""; for (i=1; i<=NF; i++) {test = sprintf("%s %c[38;5;%dm%s%c[1;0m", test, 27, $i%256, $i, 27)}; printf "%s\n",  test}'
+awk '{ test=""; for (i=1; i<=NF; i++) {if ($i !~ /^[0-9]+$/) test = sprintf("%s %s", test, $i); if ($i ~ /^[0-9]+$/) test = sprintf("%s %c[38;5;%sm%s%c[1;0m", test, 27, $i%256, $i, 27)}; printf "%s\n",  test}'
+awk '{ test=""; for (i=1; i<=NF; i++) {if ($i !~ /^[0-9]+$/) test = sprintf("%s %s", test, $i); if ($i ~ /^[0-9]+$/) test = sprintf("%s %c[38;5;%sm%s%c[1;0m", test, 27, $i%256, $i, 27)}; printf "%s\n",  test}'
