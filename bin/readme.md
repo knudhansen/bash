@@ -13,9 +13,11 @@ This tool makes it possible to run a diff on 2 files after they have been run th
 kdiff fileLeft fileRight command
 ```
 
-the parsed `fileLeft`, `fileRight`, `command` are printed on stderr
-the diff `command` run is printed on stderr
-the diff output goes to stdout with the `diff -yi` format
+The parsed `fileLeft`, `fileRight`, `command` are printed on stderr
+
+The diff `command` run is printed on stderr
+
+The diff output goes to stdout with the `diff -yi` format
 
 ### Example
 
