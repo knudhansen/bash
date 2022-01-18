@@ -1,0 +1,13 @@
+#!/bin/bash
+
+fileLeft=$1
+fileRight=$2
+
+cmd=${@:3}
+
+echo "fileLeft: $fileLeft" >&2
+echo "fileRight: $fileRight" >&2
+echo "cmd: $cmd" >&2
+echo "diff -yi <($cmd $fileLeft) <($cmd $fileRight)" >&2
+
+diff -yi <($cmd $fileLeft) <($cmd $fileRight)
