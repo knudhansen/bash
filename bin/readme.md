@@ -9,9 +9,9 @@ This tool makes it possible to run a diff on 2 files after they have been run th
 
 ### Usage
 
-kdiff <file left> <file right> <command>
+kdiff fileLeft fileRight command
 
-the parsed <file left>, <file right>, <command> are printed on stderr
+the parsed fileLeft, fileRight, command are printed on stderr
 the diff command run is printed on stderr
 the diff output goes to stdout with the diff -yi format
 
